@@ -12,7 +12,7 @@ void unit_sphere()
 	rng.seed(std::random_device()());
 	std::uniform_real_distribution<> dist(0, 1);
 
-  int points = 1e9;
+  int points = 1e6;
   int acc = 0;
 
   for(int i = 0; i < points; i++)
@@ -27,11 +27,11 @@ void unit_sphere()
   double t_vol =  M_PI * 4 / 3;
   std::cout << std::setprecision(12) << "\runit sphere volume – MC: " << vol << " theory: " << t_vol << std::endl;
   std::cout << "pi – MC: " << vol * 3 / 4 << " theory: " << M_PI << std::endl;
-
 }
 
 int main()
 {
   unit_sphere();
+  std::getchar();
 	return EXIT_SUCCESS;
 }
